@@ -146,18 +146,22 @@ function exist(arr, item) {
   }
 }
 
-function removeItem(arr,rem) {
- if (arr && exist(arr,rem)) {
-   arr.splice(arr.indexOf(rem),1);
- }
- return arr;
+function removeItem(arr, rem) {
+  if (!arr) {
+    return [];
+  } else if (arr && exist(arr, rem)) {
+    arr.splice(arr.indexOf(rem), 1);
+  }
+  return arr;
 }
 
-function addItem(arr,add) {
- if (arr && !exist(arr,add)) {
-   arr.push(add);
- }
- return arr;
+function addItem(arr, add) {
+  if (!arr) {
+    return [];
+  } else if (arr && !exist(arr, add)) {
+    arr.push(add);
+  }
+  return arr;
 }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
