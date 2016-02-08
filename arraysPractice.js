@@ -138,18 +138,10 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-function exist(arr, item) {
-  if (arr && arr.indexOf(item) !== -1) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 function removeItem(arr, rem) {
   if (!arr) {
     return [];
-  } else if (arr && exist(arr, rem)) {
+  } else if (arr.includes(rem)) {
     arr.splice(arr.indexOf(rem), 1);
   }
   return arr;
@@ -158,7 +150,7 @@ function removeItem(arr, rem) {
 function addItem(arr, add) {
   if (!arr) {
     return [];
-  } else if (arr && !exist(arr, add)) {
+  } else if (!arr.includes(add)) {
     arr.push(add);
   }
   return arr;
